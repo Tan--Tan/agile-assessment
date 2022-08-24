@@ -1,24 +1,42 @@
-import logo from './logo.svg';
 import './App.css';
+import { Link, Outlet } from "react-router-dom";
+
+import {
+  Container,
+  Row,
+  Col,
+  Nav
+} from 'react-bootstrap';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Container fluid className="h-100">
+      <Row className="h-90">
+        <Col>
+          <Outlet />
+        </Col>
+      </Row>
+      <Row className="h-10">
+        <Col>
+          <Nav className="d-flex justify-content-center">
+            <Nav.Link>
+              <Link to="/">Home</Link>
+            </Nav.Link>
+            <Nav.Link>
+              <Link to="/pantry">Pantry</Link>
+            </Nav.Link>
+            <Nav.Link>
+              <Link to="/favourites">Favourites</Link>
+            </Nav.Link>
+            <Nav.Link>
+              <Link to="/shopping">Shopping</Link>
+            </Nav.Link>
+          </Nav>
+        </Col>
+      </Row>
+    </Container>
+    </>
   );
 }
 
