@@ -20,18 +20,10 @@ function App() {
       <Row className="h-10">
         <Col>
           <Nav className="d-flex justify-content-center">
-            <Nav.Link>
-              <Link to="/">Home</Link>
-            </Nav.Link>
-            <Nav.Link>
-              <Link to="/pantry">Pantry</Link>
-            </Nav.Link>
-            <Nav.Link>
-              <Link to="/favourites">Favourites</Link>
-            </Nav.Link>
-            <Nav.Link>
-              <Link to="/shopping">Shopping</Link>
-            </Nav.Link>
+            <Nav.Link as={Link} to="/">Home</Nav.Link>
+            <Nav.Link as={Link} to="/pantry">Pantry</Nav.Link>
+            <Nav.Link as={Link} to="/favourites">Favourites</Nav.Link>
+            <Nav.Link as={Link} to="/shopping">Shopping</Nav.Link>
           </Nav>
         </Col>
       </Row>
