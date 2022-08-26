@@ -5,7 +5,9 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import { ApiProvider } from '@reduxjs/toolkit/query/react'
 
+import api from './api'
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -21,19 +23,21 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<App />}>
-        <Route index element={<Home />} />
-        <Route path="pantry" element={<Pantry />} />
-        <Route path="recipes" element={<Recipes />}>
-          <Route path=":recipeId" element={<Recipe />} />
+  <ApiProvider api={api}>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />}>
+          <Route index element={<Home />} />
+          <Route path="pantry" element={<Pantry />} />
+          <Route path="recipes" element={<Recipes />}>
+            <Route path=":recipeId" element={<Recipe />} />
+          </Route>
+          <Route path="favourites" element={<Favourites />} />
+          <Route path="shopping" element={<Shopping />} />
         </Route>
-        <Route path="favourites" element={<Favourites />} />
-        <Route path="shopping" element={<Shopping />} />
-      </Route>
-    </Routes>
-  </BrowserRouter>
+      </Routes>
+    </BrowserRouter>
+  </ApiProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

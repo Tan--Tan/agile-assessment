@@ -1,7 +1,9 @@
+const fs = require('fs');
 const express = require('express');
 const morgan = require('morgan');
 const helmet = require('helmet');
 const cors = require('cors');
+const https = require('https');
 
 require('dotenv').config();
 
@@ -10,12 +12,22 @@ const api = require('./api');
 
 const app = express();
 
+const key = fs.readFileSync('key.pem');
+const cert = fs.readFileSync('cert.pem');
+const server = https.createServer({key: key, cert: cert }, app);
+
 app.use(morgan('dev'));
 app.use(helmet());
-app.use(cors());
+
+const corsOptions = {
+  origin: '*',
+  optionsSuccessStatus: 200,
+}
+app.use(cors(corsOptions));
+
 app.use(express.json());
 
-app.get('/', (req, res) => {
+app.get('/', cors(), (req, res) => {
   res.json({
     message: '🦄🌈✨👋🌎🌍🌏✨🌈🦄',
   });
@@ -26,4 +38,4 @@ app.use('/api/v1', api);
 app.use(middlewares.notFound);
 app.use(middlewares.errorHandler);
 
-module.exports = app;
+module.exports = server;
