@@ -4,7 +4,57 @@
 }
 .h-90 {
     height: 90% !important;
+    background-color:#24BF82;
 }
 .h-10 {
     height: 10% !important;
+}
+
+.bottomNav {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #F2F2F2;
+    position: sticky;
+}
+.header {
+    justify-content: center;
+    height: 25% !important;
+    /* background-color:#24BF82; */
+}
+.header h1 {
+    color: white;
+    text-align:center;
+    padding: 25px 25px;
+}
+.main {
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    background-color: white;
+    overflow: scroll;
+    scrollbar-width: none; /* Firefox */
+}
+/* Home page */
+#getStarted > * {
+    text-align: center;
+    padding: 0.5em;
+}
+#addIngredients {
+    background-color: #FF4F63;
+    border-style: none;
+    border-radius: 20em;
+    width: 8em;
+
+}
+#addIngredients:hover {
+    background-color:#ce4555;
+    transition: 0.3s;
+  }
+.ingredientList {
+    background-color:#F2F2F2;
+}
+.nutritionList {
+    margin-bottom: 10px;
+    border-style: none;
+    border-radius: 5px !important;
+    background-color:#D9D9D9;
 }
