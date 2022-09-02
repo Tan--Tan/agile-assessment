@@ -7,9 +7,9 @@ export default createApi({
   baseQuery: fetchBaseQuery({ baseUrl: 'https://localhost:5000/api/v1' }),
   endpoints: (builder) => ({
     getRecipes: builder.query({
-      query: (search) => ({
+      query: ({search, cat} = {}) => ({
         url: `recipes`,
-        params: { search }
+        params: { search, cat }
       }),
     }),
     getRecipeById: builder.query({

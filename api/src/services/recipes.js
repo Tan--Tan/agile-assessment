@@ -1,6 +1,7 @@
 const fs = require('fs'); 
 const path = require('path');
 const csvParse = require('csv-parse');
+const sanitizer = require('string-sanitizer');
 
 const csvData = [];
 const inputFile = path.join(__dirname, '../data/recipes.csv');
@@ -39,7 +40,7 @@ function getList({ search, cat }) {
         result = csvData.filter(i => i.title.toLowerCase().includes(search.toLowerCase()));
     }
     if(cat !== null) {
-        result = csvData.filter(i => i.category === cat);
+        result = csvData.filter(i => sanitizer.sanitize(i.category) === cat);
     }
     return result;
 }

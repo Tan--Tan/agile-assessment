@@ -76,3 +76,9 @@ a {
 .search-component {
     height: 40px;
 }
+.top-recipe h3 {
+    text-transform: capitalize;
+}
+.top-recipe-item img {
+    height: 100px;
+}

@@ -9,7 +9,7 @@ import TopRecipes from "./TopRecipes";
 
 function Home() {
   return (
-      <div className="h-75 main">
+      <div className="h-100 main">
         <Row id="getStarted" className="g-0">
           <Col>
             <IoFastFoodOutline size={70} />
@@ -20,8 +20,8 @@ function Home() {
         </Row>
         <Row className="g-0">
             <Link to="/recipes">All Recipes</Link>
-            <TopRecipes />
-            <TopRecipes />
+            <TopRecipes cat="high calories" />
+            <TopRecipes cat="regular dinner" />
         </Row>
       </div>
   );

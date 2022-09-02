@@ -1,11 +1,27 @@
-import { Row } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
+
+import { Link } from "react-router-dom";
+import api from './api';
 
 function TopRecipes({ cat }) {
+  const { data, isLoading } = api.useGetRecipesQuery({ cat });
+
+  console.log(data)
   return (
-    <Row>
-      <h3></h3>
-      <
+    isLoading ? <>Loading</> : (
+      <Row className="top-recipe">
+      <h3>{cat}</h3>
+      <Row className="top-recipe-item">
+        {data.map(i =>(
+          <Col key={i.id}>
+            <Link to={`recipes/${i.id}`} />
+            <img src={i.imgURL} />
+            <h5>{i.title}</h5>
+          </Col>
+        ))}
+      </Row>
     </Row>
+    )
   )
 }
 
