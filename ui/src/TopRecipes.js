@@ -5,8 +5,6 @@ import api from './api';
 
 function TopRecipes({ cat }) {
   const { data, isLoading } = api.useGetRecipesQuery({ cat });
-
-  console.log(data)
   return (
     isLoading ? <>Loading</> : (
       <Row className="top-recipe">

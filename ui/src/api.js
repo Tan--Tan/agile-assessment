@@ -15,8 +15,11 @@ export default createApi({
     getRecipeById: builder.query({
       query: (recipeId) => `recipes/${recipeId}`,
     }),
-    geIngredients: builder.query({
-      query: () => `ingredients`,
+    getIngredients: builder.query({
+      query: (search) => ({
+        url: `ingredients`,
+        params: { search }
+      }),
     }),
   }),
 })

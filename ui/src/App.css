@@ -82,3 +82,10 @@ a {
 .top-recipe-item img {
     height: 100px;
 }
+.ingredient-item {
+    background-color: #F2F2F2;
+}
+
+.ingredient-item.active {
+    background-color: #D9D9D9;
+}

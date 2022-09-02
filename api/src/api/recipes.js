@@ -11,7 +11,6 @@ const service = require('./../services/recipes');
 router.get('/', cors(), (req, res) => {
     const search = req.query.search ? sanitizer.sanitize(req.query.search) : null;
     const cat = req.query.cat ? sanitizer.sanitize(req.query.cat) : null;
-    console.log(cat)
     res.json(service.getList({ search, cat }));
   });
 
