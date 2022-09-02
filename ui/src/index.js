@@ -29,11 +29,8 @@ root.render(
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
           <Route path="pantry" element={<Pantry />} />
-          <Route path="recipes" element={<Recipes />}>
-            <Route path=":recipeId" element={<Recipe />} />
-          </Route>
-                    {/* Del below 1 later */}
-                    <Route path="recipetesting" element={<Recipe />} /> 
+          <Route path="recipes" element={<Recipes />} />
+          <Route path="recipes/:recipeId" element={<Recipe />} />
           <Route path="favourites" element={<Favourites />} />
           <Route path="shopping" element={<Shopping />} />
         </Route>

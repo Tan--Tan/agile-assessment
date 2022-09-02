@@ -19,15 +19,20 @@ function Header() {
         case '/shopping':
             title = 'Shopping';
             break;
-        default: 
+        case '/':
             title = 'GoodChef';
+            break;
+        default: 
+            title = 'Empty';
             break;
     }
     return (
-        <Row className="app-header">
+        title !=='Empty' ? 
+        <Row className="h-25 app-header">
             <h1>{title}</h1>
             <Search />
         </Row>
+        : <></>
     );
 }
 

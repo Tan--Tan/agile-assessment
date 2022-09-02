@@ -19,14 +19,12 @@ import Header from './Header'
 function App() {
   return (
     <div className="h-100 w-100">
-      <Container className="h-90 w-100">
-        <Row className="h-25">
-          <Header />
-        </Row>
-        <Row className="h-75">
+      <div className="h-90 w-100">
+        <Header />
+        <Row className="g-0 h-75">
           <Outlet />
         </Row>
-      </Container>
+      </div>
       <Container className="h-10">
           <Nav className="d-flex justify-content-center" >
             <Nav.Link as={SLink} to="/">

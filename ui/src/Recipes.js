@@ -4,14 +4,13 @@ import {
   Col, 
   Card,
   Image,
-  Text,
  } from 'react-bootstrap';
+ import { Link, useLocation } from "react-router-dom";
+import api from './api';
 
-import api from './api'
-
-function Home() {
-  const { data, refetch, isFetching } = api.useGetRecipesQuery()
-
+function Recipes() {
+  const { data } = api.useGetRecipesQuery();
+  const { pathname } = useLocation();
   return (
     <Container>
       <Row>
@@ -27,10 +26,11 @@ function Home() {
       <Row>
         <Col>
           {data?.map(item => 
-            <Card key={item.id} >
+            <Link key={item.id} to={`${pathname}/${item.id}`} >
+              <Card >
               <Row>
                 <Col xs={4} style={{height:'100px'}}>
-                  <Card.Img as={Image} src={item.image} style={{objectFit: 'cover', height: '100%', width: '100%'}} />
+                  <Card.Img as={Image} src={item.imgURL} style={{objectFit: 'cover', height: '100%', width: '100%'}} />
                 </Col>
                 <Col>
                   <Card.Body>
@@ -38,9 +38,8 @@ function Home() {
                   </Card.Body> 
                 </Col>
               </Row>
-              
-              
-            </Card>
+              </Card>
+            </Link>
           )}
           
         </Col>
@@ -50,4 +49,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Recipes;

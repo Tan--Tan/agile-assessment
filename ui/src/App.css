@@ -29,9 +29,11 @@
 .main {
     border-top-left-radius: 18px;
     border-top-right-radius: 18px;
+    margin-top: -9px;
     background-color: white;
     overflow: scroll;
     scrollbar-width: none; /* Firefox */
+    padding: 0 10px;
 }
 /* Home page */
 #getStarted > * {

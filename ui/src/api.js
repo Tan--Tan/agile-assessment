@@ -9,5 +9,8 @@ export default createApi({
     getRecipes: builder.query({
       query: () => `recipes`,
     }),
+    getRecipeById: builder.query({
+      query: (recipeId) => `recipes/${recipeId}`,
+    }),
   }),
 })
