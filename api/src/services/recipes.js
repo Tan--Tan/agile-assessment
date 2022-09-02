@@ -33,8 +33,15 @@ fs.createReadStream(inputFile)
 
     });
 
-function getList() {
-    return csvData;
+function getList({ search, cat }) {
+    let result = csvData;
+    if(search !== null) {
+        result = csvData.filter(i => i.title.toLowerCase().includes(search.toLowerCase()));
+    }
+    if(cat !== null) {
+        result = csvData.filter(i => i.category === cat);
+    }
+    return result;
 }
 
 function getById(id) {

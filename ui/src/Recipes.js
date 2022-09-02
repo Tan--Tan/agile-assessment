@@ -1,11 +1,10 @@
 import { 
-  Container, 
   Row, 
   Col, 
   Card,
   Image,
  } from 'react-bootstrap';
- import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import api from './api';
 
 function Recipes() {
