@@ -34,7 +34,7 @@ fs.createReadStream(inputFile)
     });
 
 function getList() {
-    return [csvData[0]];
+    return csvData;
 }
 
 function getById(id) {
