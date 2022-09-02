@@ -16,12 +16,12 @@
     background-color: #F2F2F2;
     position: sticky;
 }
-.header {
+.app-header {
     justify-content: center;
     height: 25% !important;
     /* background-color:#24BF82; */
 }
-.header h1 {
+.app-header h1 {
     color: white;
     text-align:center;
     padding: 25px 25px;

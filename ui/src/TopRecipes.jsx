@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Italian() {
+function TopRecipes() {
   return (
     <div>
       <h3> Italian </h3>
@@ -8,4 +8,4 @@ function Italian() {
   )
 }
 
-export default Italian
+export default TopRecipes

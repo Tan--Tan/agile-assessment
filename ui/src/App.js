@@ -12,17 +12,22 @@ import {
   Nav
 } from 'react-bootstrap';
 
+import './App.css';
+
+import Header from './Header'
+
 function App() {
   return (
-    <>
-    <Container fluid className="h-100 ">
-      <Row className="h-90">
-        <Col>
+    <div className="h-100 w-100">
+      <Container className="h-90 w-100">
+        <Row className="h-25">
+          <Header />
+        </Row>
+        <Row className="h-75">
           <Outlet />
-        </Col>
-      </Row>
-      <Row className="h-10 bottomNav">
-        <Col>
+        </Row>
+      </Container>
+      <Container className="h-10">
           <Nav className="d-flex justify-content-center" >
             <Nav.Link as={SLink} to="/">
               <AiFillHome size={25}/>
@@ -40,12 +45,9 @@ function App() {
               <RiShoppingCart2Fill size={25}/>
               Shopping
               </Nav.Link>
-
           </Nav>
-        </Col>
-      </Row>
-    </Container>
-    </>
+      </Container>
+    </div>
   );
 }
 // Styling nav links and icons using styled-components
@@ -54,10 +56,9 @@ const SLink = styled(NavLink)`
   flex-direction: column;
   align-items: center;
   svg{
-    color: white;
+    color: lightgray;
   }
-  font-size:0.7em;
-  color: black;
+  color: gray;
   &:hover {
     transition: 0.1s ease-out;
     color: #24BF82;

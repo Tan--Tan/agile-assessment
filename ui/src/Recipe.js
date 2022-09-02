@@ -1,10 +1,7 @@
 import {
-  Container,
   Row,
-  Col,
-  Button
+  Col
 } from 'react-bootstrap';
-import { Link } from "react-router-dom";
 import ListGroup from 'react-bootstrap/ListGroup';
 
 //del later
@@ -25,7 +22,7 @@ const ingredientData = [
 const nutritionData = {"calories": "650kcal", "protein": "43.6g",
   "fat": "21.9g", "carbs": "70.4g"};
 
-function Home() {
+function Recipe() {
   return (
     <>
       <Row className="header">
@@ -87,4 +84,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Recipe;

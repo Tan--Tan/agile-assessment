@@ -1,11 +1,10 @@
 import Container from 'react-bootstrap/Container';
 
-function Home() {
+function Pantry() {
   return (
     <Container>
-      <h1>Pantry</h1>
     </Container>
   );
 }
 
-export default Home;
+export default Pantry;
