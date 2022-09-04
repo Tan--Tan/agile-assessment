@@ -14,6 +14,10 @@ a {
     text-decoration: none;
 }
 
+#rec {
+    padding: 30px
+}
+
 .bottomNav {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;

@@ -38,7 +38,7 @@ function Recipe() {
         </Row>
         <Row className="g-0">
           <Col>
-            <h3><b>Ingrediens</b></h3>
+            <h3><b>Ingredients</b></h3>
             <ListGroup>
             {data.ingredients.map(item =>
                 <ListGroup.Item className="ingredientList" key={item.name}>
@@ -52,9 +52,9 @@ function Recipe() {
         <Row className="g-0">
           <Col>
             <h3><b>Cooking Steps</b></h3>
-            <ListGroup>
+            <ListGroup >
             {data.cookingSteps.map((item, i) =>
-                <ListGroup.Item key={1}>
+                <ListGroup.Item key={1} id="rec" >
                   {item}
                 </ListGroup.Item>
             )}
