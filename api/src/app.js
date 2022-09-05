@@ -3,7 +3,7 @@ const express = require('express');
 const morgan = require('morgan');
 const helmet = require('helmet');
 const cors = require('cors');
-const https = require('https');
+const http = require('http');
 
 require('dotenv').config();
 
@@ -14,7 +14,7 @@ const app = express();
 
 const key = fs.readFileSync('key.pem');
 const cert = fs.readFileSync('cert.pem');
-const server = https.createServer({key: key, cert: cert }, app);
+const server = http.createServer({key: key, cert: cert }, app);
 
 app.use(morgan('dev'));
 app.use(helmet());
