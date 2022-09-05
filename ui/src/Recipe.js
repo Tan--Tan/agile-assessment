@@ -20,7 +20,7 @@ function Recipe() {
       <Row className="g-0">
         <Image src={data.imgURL} />
       </Row>
-      <Row className="g-0 h-75 main">
+      <Row className="g-0 h-90 main">
         <Row className="g-0">
           <Col>
             <h2 style={{fontWeight: 400, textAlign: 'center', paddingTop:'0.5em'}}>
@@ -54,7 +54,7 @@ function Recipe() {
             <h3><b>Cooking Steps</b></h3>
             <ListGroup >
             {data.cookingSteps.map((item, i) =>
-                <ListGroup.Item key={1} id="rec" >
+                <ListGroup.Item key={i} id="rec" >
                   {item}
                 </ListGroup.Item>
             )}
@@ -65,9 +65,9 @@ function Recipe() {
           <h3><b>Nutrition Facts</b></h3>
           <i>Amount Per Serving</i>
           <ListGroup>
-            {Object.entries(nutritionData).map(([key, value]) => {
+            {Object.entries(nutritionData).map(([key, value], i) => {
               return (
-                <ListGroup.Item className="nutritionList"> {key} 
+                <ListGroup.Item className="nutritionList" key={i}> {key} 
                   <span style={{ float: "right" }}>{nutritionData[key]}</span>
                 </ListGroup.Item>
               )

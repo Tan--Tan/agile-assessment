@@ -21,5 +21,10 @@ export default createApi({
         params: { search }
       }),
     }),
+    getFavourites: builder.query({
+      query: () => ({
+        url: `favourites`
+      }),
+    }),
   }),
 })

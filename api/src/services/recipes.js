@@ -5,6 +5,8 @@ const sanitizer = require('string-sanitizer');
 
 const csvData = [];
 const inputFile = path.join(__dirname, '../data/recipes.csv');
+// mocked favourite IDs
+const favouriteIds = [2,4,6,8];
 let curId = 0;
 
 fs.createReadStream(inputFile)
@@ -49,7 +51,12 @@ function getById(id) {
     return csvData.find(i => i.id === Number(id));
 }
 
+function getFavouriteList() {
+    return csvData.filter(i => favouriteIds.includes(i.id));
+}
+
 module.exports = {
     getList,
-    getById
+    getById,
+    getFavouriteList
 }
